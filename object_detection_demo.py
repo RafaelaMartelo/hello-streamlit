@@ -49,7 +49,7 @@ def main():
     }
 
     # Option for users to choose an image source
-    st.sidebar.markdown('**Select Image Source**')  # Using Markdown for bold text
+    st.sidebar.markdown('**Select Image Source**') 
     image_source = st.sidebar.radio("**Image Source**", ["Upload Image 🚗", "Sample Snowy Day ❄️", "Sample Clean Day 🌤️"], key="image_source", label_visibility="collapsed")
 
     image_path = None
