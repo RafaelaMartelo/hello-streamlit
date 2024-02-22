@@ -1,6 +1,5 @@
-altair
-numpy
-pandas
-pydeck
 streamlit
-ultralytics
+Pillow
+torch>=1.7.0,<1.11  
+torchvision  
+ultralytics>=6.0  
