@@ -13,49 +13,16 @@
 # limitations under the License.
 
 import streamlit as st
-from PIL import Image
-import tempfile
-import glob
-from ultralytics import YOLO
+from model_utils import load_model, predict
+from image_utils import save_uploaded_file, display_images
 from streamlit.logger import get_logger
 
 LOGGER = get_logger(__name__)
 
-# Function to load the YOLO model
-def load_model():
-    return YOLO('best.pt')
+# Global variables for sample images
+SAMPLE_IMAGE_SNOWY = "images/test_5.jpg"
+SAMPLE_IMAGE_CLEAN = "images/test_10.jpg"
 
-# Function to save uploaded file
-def save_uploaded_file(uploaded_file):
-    if uploaded_file is not None:
-        with tempfile.NamedTemporaryFile(delete=False, suffix='.jpg') as tmp:
-            tmp.write(uploaded_file.getvalue())
-            return tmp.name
-    return None
-
-# Dedicated predict function
-def predict(model, image_path, confidence):
-    results = model.predict(source=image_path, conf=confidence, save=True, name='predicted')
-    predicted_dirs = sorted(glob.glob('runs/detect/predicted*/'), key=os.path.getmtime, reverse=True)
-    if predicted_dirs:
-        latest_predicted_dir = predicted_dirs[0]
-        predicted_images = glob.glob(f'{latest_predicted_dir}/*.jpg')
-        if predicted_images:
-            return predicted_images[0]
-    return None
-
-# Function to display images
-def display_images(original_image_path, predicted_image_path):
-    col1, col2 = st.columns(2)
-    with col1:
-        st.image(original_image_path, caption='Selected Image', use_column_width=True)
-    if predicted_image_path:
-        predicted_image = Image.open(predicted_image_path)
-        with col2:
-            st.image(predicted_image, caption='Predicted Image', use_column_width=True)
-    else:
-        with col2:
-            st.error('Prediction failed or no predictions made.')
 
 # Main function to run the app
 def main():
@@ -77,8 +44,8 @@ def main():
     confidence = st.sidebar.slider("**Model Confidence**", 25, 100, 40, key="conf_slider", label_visibility="collapsed")/100  # Empty label
 
     sample_image_paths = {
-        "Sample Snowy Day ❄️": "images/test_5.jpg",
-        "Sample Clean Day 🌤️": "images/test_10.jpg"
+        "Sample Snowy Day ❄️": SAMPLE_IMAGE_SNOWY,
+        "Sample Clean Day 🌤️": SAMPLE_IMAGE_CLEAN
     }
 
     # Option for users to choose an image source
