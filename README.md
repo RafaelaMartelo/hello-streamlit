@@ -8,6 +8,8 @@ This project showcases the application of the YOLOv8 model for object detection,
 
 To see our app in action, check out this demo video: [App Demo Video](https://example.com/demo_video)
 
+## Try it Yourself!
+
 Link to try the app: https://object-detection-demoo.streamlit.app/
 
 ## Deployment Instructions
@@ -16,9 +18,14 @@ To deploy this Streamlit app using our repository, follow these steps:
 
 ### Prerequisites
 
-- Git
-- Python (version recommended in `requirements.txt`)
-- pip
+Before you begin, ensure you have met the following requirements:
+
+- **Git**: For cloning and managing versions of the repository.
+- **Python**: The project is tested with Python 3.9. Adjust according to your project's compatibility. It's recommended to use a virtual environment.
+- **pip**: To install Python packages listed in `requirements.txt`.
+
+Please refer to `requirements.txt` for the Python packages and their versions needed to run this application.
+
 
 ### Steps
 
