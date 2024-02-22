@@ -72,14 +72,19 @@ def main():
     3️⃣ Click the **Predict** button to perform object detection.  
     ''', unsafe_allow_html=True)
 
-    confidence = st.sidebar.slider("Model Confidence", 25, 100, 40, key="conf_slider") / 100
+    # Adding a slider to the sidebar for selecting model confidence
+    st.sidebar.markdown('**Select Model Confidence**')  # Using Markdown for bold text
+    confidence = st.sidebar.slider("**Model Confidence**", 25, 100, 40, key="conf_slider", label_visibility="collapsed")/100  # Empty label
 
     sample_image_paths = {
         "Sample Snowy Day ❄️": "images/test_5.jpg",
         "Sample Clean Day 🌤️": "images/test_10.jpg"
     }
 
-    image_source = st.sidebar.radio("Image Source", ["Upload Image 🚗", "Sample Snowy Day ❄️", "Sample Clean Day 🌤️"], key="image_source")
+    # Option for users to choose an image source
+    st.sidebar.markdown('**Select Image Source**')  # Using Markdown for bold text
+    image_source = st.sidebar.radio("**Image Source**", ["Upload Image 🚗", "Sample Snowy Day ❄️", "Sample Clean Day 🌤️"], key="image_source", label_visibility="collapsed")
+
     image_path = None
 
     if image_source == "Upload Image 🚗":
@@ -96,14 +101,27 @@ def main():
         else:
             st.warning("Please select an image source and click 'Predict' to proceed.")
 
-    st.markdown("### Model Performance Metrics")
+    # Model Performance Metrics
     st.markdown("""
+    ### Model Performance Metrics
+
+    The table below presents the performance metrics of the YOLO model tailored for object detection in inclement weather conditions, crucial for autonomous vehicle navigation. The metrics underscore the model's proficiency in identifying key objects—cars, trucks, and persons—with notable precision and recall rates. 
+
     | Class   | Images | Instances | Precision | Recall | mAP@0.5 | mAP@0.5:0.95 |
     |---------|--------|-----------|-----------|--------|---------|--------------|
     | All     | 39     | 290       | 86.2%     | 77.5%   | 84.3%   | 58.9%        |
     | Car     | 39     | 221       | 85.8%     | 76.5%   | 86.1%   | 60.8%        |
     | Person  | 39     | 48        | 78.1%     | 70.8%   | 80.0%   | 45.7%        |
     | Truck   | 39     | 21        | 94.7%     | 85.2%   | 86.9%   | 70.2%        |
+
+    These metrics demonstrate the model's effectiveness in accurately identifying cars, trucks, and persons, which are essential for the safety and operational efficiency of autonomous vehicles under various weather conditions. However, it's important to note that the model's performance, while impressive, is not infallible. Trained on a relatively small dataset, the model may exhibit limitations in certain complex scenarios typical of inclement weather conditions. Continuous improvements and training on a more diverse and extensive dataset are essential for enhancing the model's robustness and reliability in real-world applications.
+
+    ### More About This Project 
+
+    This project explores the application of object detection technologies in enhancing autonomous vehicle navigation, particularly under challenging weather conditions. By focusing on critical object detection, the project aims to contribute to the safety and efficiency of autonomous driving systems. 
+
+    For a deeper understanding of the project's objectives, methodologies, and findings, please visit the [GitHub repository](https://github.com/RafaelaMartelo/Capstone_Object_Tracking_and_Detection_for_AV/tree/main).
+
     """)
 
     st.sidebar.markdown("""
