@@ -79,7 +79,7 @@ For more details on the project's techniques, methods, or dataset, please see th
 
 - [Capstone_Object_Tracking_and_Detection_for_AV](https://github.com/RafaelaMartelo/Capstone_Object_Tracking_and_Detection_for_AV)
 
-This repository includes additional documentation, datasets, and code used on the Deep Learning model development that complement the current project.
+This repository includes additional documentation, dataset, and code used on the prototype development that complement the current project.
 
 ## Contributors
 
