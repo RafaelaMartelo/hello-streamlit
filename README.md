@@ -14,8 +14,6 @@ Experience the app firsthand:
 
 [![Try the Object Detection App](URL_TO_IMAGE_IF_AVAILABLE)](https://object-detection-demoo.streamlit.app/)
 
-Click [here](https://object-detection-demoo.streamlit.app/) to try the app!
-
 ## Deployment Instructions
 
 To deploy this Streamlit app using our repository, follow these steps:
