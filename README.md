@@ -73,7 +73,7 @@ Please refer to `requirements.txt` for the Python packages and their versions ne
 
 ## Future Directions for Testing and Logging
 
-To ensure the robustness and reliability of our object detection application as we move towards production, focusing on detailed testing and straightforward logging is crucial. Below are revised strategies that include a wider range of edge cases and simplified logging examples:
+To ensure the robustness and reliability of our object detection application as we move towards production, focusing on detailed testing and straightforward logging is crucial. Below are strategies to consider in future work:
 
 ### Unit Testing
 
