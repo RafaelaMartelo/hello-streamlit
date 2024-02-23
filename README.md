@@ -91,4 +91,4 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-This demo App was was developed upon the [hello-streamlit](https://github.com/streamlit/hello-streamlit) sample provided by Streamlit. 
+This demo App was developed upon the [hello-streamlit](https://github.com/streamlit/hello-streamlit) sample provided by Streamlit. 
