@@ -49,12 +49,14 @@ Please refer to `requirements.txt` for the Python packages and their versions ne
    .\venv\Scripts\activate  # On Windows
 
 3. **Install Dependencies**
+
    Install the project's dependencies by running:
 
    ```bash
    pip install -r requirements.txt
 
 4. **Run the App Locally**
+
    With the dependencies installed, you can run the app locally by executing:
 
    streamlit run object_detection_demo.py
@@ -70,3 +72,23 @@ Please refer to `requirements.txt` for the Python packages and their versions ne
    - Click 'Deploy', and Streamlit Sharing will start the process of deploying your app. After a few moments, you should be provided with a URL to access your deployed app.
 
 **Note**: The deployment process on Streamlit Sharing automatically installs Python dependencies listed in your `requirements.txt` file. If your app requires system-level packages, make sure to include a `packages.txt` file in your repository root with the required system packages listed there. Streamlit Sharing will install these system-level packages before running your app.
+
+## More About this Project
+
+For more details on the project's techniques, methods, or dataset, please see the following related repository:
+
+- [Capstone_Object_Tracking_and_Detection_for_AV](https://github.com/RafaelaMartelo/Capstone_Object_Tracking_and_Detection_for_AV)
+
+This repository includes additional documentation, datasets, and code used on the Deep Learning model development that complement the current project.
+
+## Contributors
+
+- Rafaela Martelo - [rafaelasofialm98@gmail.com](mailto:rafaelasofialm98@gmail.com)
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+This demo App was was developed upon the [hello-streamlit](https://github.com/streamlit/hello-streamlit) sample provided by Streamlit. 
