@@ -71,6 +71,37 @@ Please refer to `requirements.txt` for the Python packages and their versions ne
 
 **Note**: The deployment process on Streamlit Sharing automatically installs Python dependencies listed in your `requirements.txt` file. If your app requires system-level packages, make sure to include a `packages.txt` file in your repository root with the required system packages listed there. Streamlit Sharing will install these system-level packages before running your app.
 
+## Future Directions for Testing and Logging
+
+To ensure the robustness and reliability of our object detection application as we move towards production, focusing on detailed testing and straightforward logging is crucial. Below are revised strategies that include a wider range of edge cases and simplified logging examples:
+
+### Unit Testing
+
+Unit testing should cover fundamental functionality and edge cases, ensuring the system behaves as expected under a variety of inputs and conditions.
+
+- **Functionality Tests:** Verify core functionalities such as image upload, model prediction, and result display operate correctly.
+- **Edge Cases for Image Inputs:**
+  - **Unsupported File Formats:** Test the application's ability to handle and notify users about unsupported image formats (e.g., TIFF, BMP).
+  - **Corrupted Image Files:** Ensure the system gracefully handles corrupted images without crashing, providing a user-friendly error message.
+  - **Large File Sizes:** Simulate uploads of excessively large images to test the system's capability to limit input sizes or efficiently process large files.
+
+### Integration Testing
+
+Integration testing should confirm that different parts of the application work together harmoniously.
+
+- **Workflow Integration:** Confirm that the end-to-end process from image upload to prediction and visualization is seamless and bug-free.
+- **User Interface and Experience:** Test the application's response to user interactions, such as adjusting confidence thresholds or selecting different image sources.
+
+### Logging
+
+Simple yet effective logging strategies are essential for monitoring the application's health and user activities.
+
+- **Access Logs:** Record timestamps, IP addresses, and endpoints accessed to monitor application usage and detect unusual patterns that may indicate issues.
+- **Error Logs:** Capture detailed error messages and stack traces for backend failures, such as model loading errors or prediction exceptions, to facilitate debugging.
+- **Operational Metrics:** Log key operational metrics such as request processing time, memory usage, and CPU load to ensure the application's performance is within expected thresholds.
+
+By addressing these edge cases through rigorous testing and implementing straightforward logging practices, we aim to build a resilient and user-friendly application ready for production deployment.
+
 ## More About this Project
 
 For more details on the project's techniques, methods, or dataset, please see the following related repository:
